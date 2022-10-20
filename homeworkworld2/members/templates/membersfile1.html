@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome to the homepage, pls fill the form before you continue to the next one.</h1>
+    <form action="{% url 'First1' %}" method="POST">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit">
+    </form>
+    <ul>
+        {% for task in list %}
+        <li>{{task}}</li>
+        {% endfor %}
+    </ul>
+    <ul>
+        {% for task2 in list2 %}
+        <li>{{task2}}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
